@@ -6,6 +6,8 @@ services:
       context: ./
     volumes:
       - ./:/srv
+    environment:
+      - WEB_PORT
     ports:
-      - "$WEB_PORT:9000"
+      - "$WEB_PORT:$WEB_PORT"
     command: yarn start:dev

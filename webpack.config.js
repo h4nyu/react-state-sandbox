@@ -7,7 +7,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     host: "0.0.0.0",
-    port: 9000
+    port: process.env.WEB_PORT || 9000,
   },
   module: {
     rules: [
@@ -26,5 +26,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
 
   },
-  plugins: [new HtmlWebpackPlugin({title: "test"})]
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "test",
+      templateContent: `<html><body><div id="root"></div></body></html>`
+    })
+  ]
 };
