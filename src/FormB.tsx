@@ -1,8 +1,8 @@
-import React from 'react';
-import {StoreB} from "./store"
+import React from 'react'
+import { StoreB } from './store'
 
-export default function(){
-  const {name, setName} = StoreB.useContainer()
+export default function FormB () {
+  const { name, setName } = StoreB.useContainer()
   return (
     <>
       <input type="text" value={name} onChange={e => setName(e.currentTarget.value)} />
@@ -10,4 +10,3 @@ export default function(){
     </>
   )
 }
-
